@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EROS Ingeniería — Soluciones Topográficas</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- INTRO / LOADER -->
+  <div class="intro" id="intro">
+    <img src="/img/logo-nav.svg" alt="EROS Ingeniería" class="intro__logo" id="introLogo" />
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar__logo">
+      <img src="/img/logo-nav.svg" alt="EROS Ingeniería" class="navbar__logo-img" id="navLogo" />
+    </div>
+    <ul class="navbar__links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+    </ul>
+    <a href="#contacto" class="navbar__cta">Contacto</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+
+    <!-- Líneas decorativas de curvas topográficas -->
+    <div class="hero__topo" aria-hidden="true">
+      <svg viewBox="0 0 800 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,180 C150,160 250,120 400,100 C550,80 650,110 800,90" fill="none" stroke="currentColor" stroke-width="1" opacity="0.12"/>
+        <path d="M0,160 C120,140 280,95 420,80 C560,65 680,95 800,70" fill="none" stroke="currentColor" stroke-width="1" opacity="0.18"/>
+        <path d="M0,140 C100,115 300,70 450,58 C600,46 700,80 800,52" fill="none" stroke="currentColor" stroke-width="1" opacity="0.22"/>
+        <path d="M0,115 C130,90 320,45 460,35 C600,25 710,60 800,34" fill="none" stroke="currentColor" stroke-width="1" opacity="0.16"/>
+        <path d="M0,90 C160,65 340,20 480,12 C620,4 720,40 800,16" fill="none" stroke="currentColor" stroke-width="1" opacity="0.1"/>
+      </svg>
+    </div>
+
+    <div class="hero__inner">
+
+      <!-- Columna izquierda: texto -->
+      <div class="hero__content">
+
+        <div class="hero__tag">
+          <span class="hero__tag-dot"></span>
+          Soluciones topográficas y constructivas
+        </div>
+
+        <h1 class="hero__title">
+          Precisión en cada<br>metro de terreno
+        </h1>
+
+        <p class="hero__subtitle">
+          Levantamientos topográficos, Levantamientos GNSS y Fotogrametría con dron.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#" class="btn btn--primary">Solicitar cotización</a>
+          <a href="#" class="btn btn--ghost">Ver proyectos</a>
+        </div>
+
+        <!-- Stats rápidos -->
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <span class="hero__stat-number">+50</span>
+            <span class="hero__stat-label">Proyectos completados</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">4</span>
+            <span class="hero__stat-label">Años de experiencia</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">Edo. Méx.</span>
+            <span class="hero__stat-label">Zona de operación principal</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Columna derecha: logo -->
+      <div class="hero__visual">
+        <img
+          src="/img/logo-nobg.webp"
+          alt="EROS Ingeniería — Soluciones topográficas y constructivas"
+          class="hero__logo-img"
+        />
+      </div>  
+
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       SERVICIOS
+  ============================================================ -->
+  <section class="section servicios" id="servicios">
+    <div class="section__inner">
+      <div class="section__header">
+        <span class="section__tag">Lo que hacemos</span>
+        <h2 class="section__title">Nuestros servicios</h2>
+        <p class="section__subtitle">Soluciones precisas para cada etapa de tu proyecto, desde el levantamiento inicial hasta el trazo en campo.</p>
+      </div>
+      <div class="servicios__grid">
+
+        <div class="servicio-card">
+          <div class="servicio-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 7l9-4 9 4v10l-9 4-9-4V7z"/><path d="M12 3v18M3 7l9 4 9-4"/>
+            </svg>
+          </div>
+          <h3 class="servicio-card__title">Levantamiento topográfico</h3>
+          <p class="servicio-card__text">Medición y representación precisa del terreno para proyectos de ingeniería civil, catastro y urbanismo.</p>
+        </div>
+
+        <div class="servicio-card">
+          <div class="servicio-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a4 4 0 014 4c0 1.5-.8 2.8-2 3.5V21H10V9.5A4 4 0 0112 2z"/><path d="M8 21h8M7 9h10"/>
+            </svg>
+          </div>
+          <h3 class="servicio-card__title">Levantamiento GNSS</h3>
+          <p class="servicio-card__text">Posicionamiento de alta precisión con GPS diferencial para control geodésico y replanteo de puntos críticos.</p>
+        </div>
+
+        <div class="servicio-card">
+          <div class="servicio-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="10" rx="2"/><path d="M12 7V4m0 13v3M7 7V5m10 2V5"/>
+            </svg>
+          </div>
+          <h3 class="servicio-card__title">Fotogrametría con dron</h3>
+          <p class="servicio-card__text">Modelos 3D, ortofotomapas y nubes de puntos de alta resolución mediante vuelos UAV programados.</p>
+        </div>
+
+        <div class="servicio-card">
+          <div class="servicio-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 20h20M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/>
+            </svg>
+          </div>
+          <h3 class="servicio-card__title">Trazo y nivelación</h3>
+          <p class="servicio-card__text">Replanteo de obras con estación total para garantizar alineaciones y cotas exactas en construcción.</p>
+        </div>
+
+        <div class="servicio-card">
+          <div class="servicio-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h3 class="servicio-card__title">Planos y memorias</h3>
+          <p class="servicio-card__text">Elaboración de planos topográficos, perfiles de terreno y memorias de cálculo para trámites y construcción.</p>
+        </div>
+
+        <div class="servicio-card">
+          <div class="servicio-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+            </svg>
+          </div>
+          <h3 class="servicio-card__title">Consultoría técnica</h3>
+          <p class="servicio-card__text">Asesoramiento especializado en proyectos de ingeniería civil, análisis de terreno y viabilidad constructiva.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       POR QUÉ ELEGIRNOS
+  ============================================================ -->
+  <section class="section porque" id="porque">
+    <div class="section__inner">
+      <div class="section__header">
+        <span class="section__tag">Nuestra diferencia</span>
+        <h2 class="section__title">¿Por qué elegir EROS?</h2>
+        <p class="section__subtitle">Combinamos tecnología de punta con conocimiento del terreno local para entregar resultados que otros no pueden.</p>
+      </div>
+      <div class="porque__grid">
+
+        <div class="porque__item">
+          <span class="porque__number">01</span>
+          <h3 class="porque__title">Equipos de última generación</h3>
+          <p class="porque__text">Trabajamos con estaciones totales robotizadas, receptores GNSS RTK y drones DJI de grado profesional.</p>
+        </div>
+
+        <div class="porque__item">
+          <span class="porque__number">02</span>
+          <h3 class="porque__title">Entregas en tiempo y forma</h3>
+          <p class="porque__text">Sabemos que los proyectos tienen fechas. Nos comprometemos con plazos reales y los cumplimos.</p>
+        </div>
+
+        <div class="porque__item">
+          <span class="porque__number">03</span>
+          <h3 class="porque__title">Precisión certificada</h3>
+          <p class="porque__text">Todos nuestros trabajos incluyen memoria de cálculo y control de calidad interno antes de entrega.</p>
+        </div>
+
+        <div class="porque__item">
+          <span class="porque__number">04</span>
+          <h3 class="porque__title">Cobertura en Estado de México</h3>
+          <p class="porque__text">Operamos en toda la región con conocimiento del terreno local, normativas municipales y condiciones de campo.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PROYECTOS
+  ============================================================ -->
+  <section class="section proyectos" id="proyectos">
+    <div class="section__inner">
+      <div class="section__header">
+        <span class="section__tag">Portafolio</span>
+        <h2 class="section__title">Proyectos recientes</h2>
+        <p class="section__subtitle">Una muestra del trabajo que hemos realizado para clientes en la región.</p>
+      </div>
+      <div class="proyectos__grid">
+
+        <div class="proyecto-card">
+          <div class="proyecto-card__img proyecto-card__img--1"></div>
+          <div class="proyecto-card__body">
+            <span class="proyecto-card__tag">Levantamiento topográfico</span>
+            <h3 class="proyecto-card__title">Fraccionamiento Ixtlahuaca</h3>
+            <p class="proyecto-card__text">Levantamiento de 12 hectáreas para proyecto de vivienda. Planos de lotificación y curvas de nivel.</p>
+          </div>
+        </div>
+
+        <div class="proyecto-card">
+          <div class="proyecto-card__img proyecto-card__img--2"></div>
+          <div class="proyecto-card__body">
+            <span class="proyecto-card__tag">Fotogrametría UAV</span>
+            <h3 class="proyecto-card__title">Ortofotomapa zona agrícola</h3>
+            <p class="proyecto-card__text">Vuelo fotogramétrico de 80 ha con generación de ortofoto y modelo digital de elevaciones.</p>
+          </div>
+        </div>
+
+        <div class="proyecto-card">
+          <div class="proyecto-card__img proyecto-card__img--3"></div>
+          <div class="proyecto-card__body">
+            <span class="proyecto-card__tag">Trazo y nivelación</span>
+            <h3 class="proyecto-card__title">Trazo vialidad municipal</h3>
+            <p class="proyecto-card__text">Replanteo de trazo y nivelación para 2.4 km de vialidad primaria en Atlacomulco.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       NOSOTROS
+  ============================================================ -->
+  <section class="section nosotros" id="nosotros">
+    <div class="section__inner nosotros__inner">
+
+      <div class="nosotros__content">
+        <span class="section__tag">El equipo</span>
+        <h2 class="section__title">Ingenieros comprometidos con la precisión</h2>
+        <p class="nosotros__text">EROS Ingeniería nació con el objetivo de ofrecer soluciones topográficas de alta calidad en el Estado de México. Contamos con un equipo de ingenieros topógrafos certificados y apasionados por el trabajo de campo.</p>
+        <p class="nosotros__text">Desde proyectos de vivienda hasta obra de infraestructura, aplicamos la misma rigurosidad técnica y compromiso con cada cliente, sin importar el tamaño del proyecto.</p>
+        <div class="nosotros__stats">
+          <div class="nosotros__stat">
+            <span class="nosotros__stat-number">+50</span>
+            <span class="nosotros__stat-label">Proyectos</span>
+          </div>
+          <div class="nosotros__stat">
+            <span class="nosotros__stat-number">4</span>
+            <span class="nosotros__stat-label">Años</span>
+          </div>
+          <div class="nosotros__stat">
+            <span class="nosotros__stat-number">100%</span>
+            <span class="nosotros__stat-label">Compromiso</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nosotros__visual">
+        <div class="nosotros__img-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span>Foto del equipo</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TESTIMONIOS
+  ============================================================ -->
+  <section class="section testimonios" id="testimonios">
+    <div class="section__inner">
+      <div class="section__header">
+        <span class="section__tag">Clientes</span>
+        <h2 class="section__title">Lo que dicen de nosotros</h2>
+      </div>
+      <div class="testimonios__grid">
+
+        <div class="testimonio-card">
+          <p class="testimonio-card__text">"El trabajo fue impecable. Entregaron los planos antes del plazo acordado y con toda la documentación en orden. Los recomiendo totalmente."</p>
+          <div class="testimonio-card__author">
+            <div class="testimonio-card__avatar">JM</div>
+            <div>
+              <span class="testimonio-card__name">Juan Martínez</span>
+              <span class="testimonio-card__role">Constructor independiente</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonio-card">
+          <p class="testimonio-card__text">"Contratamos el levantamiento GNSS para un proyecto de lotificación y el resultado superó nuestras expectativas. Muy profesionales."</p>
+          <div class="testimonio-card__author">
+            <div class="testimonio-card__avatar">LR</div>
+            <div>
+              <span class="testimonio-card__name">Laura Reyes</span>
+              <span class="testimonio-card__role">Desarrolladora inmobiliaria</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonio-card">
+          <p class="testimonio-card__text">"El ortofotomapa que nos entregaron fue clave para la planeación del proyecto. Calidad de imagen excelente y proceso muy ágil."</p>
+          <div class="testimonio-card__author">
+            <div class="testimonio-card__avatar">CA</div>
+            <div>
+              <span class="testimonio-card__name">Carlos Ávila</span>
+              <span class="testimonio-card__role">Ingeniero civil</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACTO
+  ============================================================ -->
+  <section class="section contacto" id="contacto">
+    <div class="section__inner">
+      <div class="section__header">
+        <span class="section__tag">Hablemos</span>
+        <h2 class="section__title">Solicita tu cotización</h2>
+        <p class="section__subtitle">Cuéntanos sobre tu proyecto y te respondemos en menos de 24 horas.</p>
+      </div>
+      <div class="contacto__inner">
+
+        <div class="contacto__form-wrap">
+          <div class="form-group">
+            <label class="form-label" for="nombre">Nombre completo</label>
+            <input class="form-input" type="text" id="nombre" placeholder="Ej. Juan Martínez" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Correo electrónico</label>
+            <input class="form-input" type="email" id="email" placeholder="correo@ejemplo.com" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="telefono">Teléfono</label>
+            <input class="form-input" type="tel" id="telefono" placeholder="+52 722 000 0000" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="servicio">Servicio de interés</label>
+            <select class="form-input form-select" id="servicio">
+              <option value="">Selecciona un servicio</option>
+              <option>Levantamiento topográfico</option>
+              <option>Levantamiento GNSS</option>
+              <option>Fotogrametría con dron</option>
+              <option>Trazo y nivelación</option>
+              <option>Planos y memorias</option>
+              <option>Consultoría técnica</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="mensaje">Descripción del proyecto</label>
+            <textarea class="form-input form-textarea" id="mensaje" placeholder="Cuéntanos brevemente sobre tu proyecto, ubicación y lo que necesitas..."></textarea>
+          </div>
+          <button class="btn btn--primary btn--full" type="button">Enviar solicitud</button>
+        </div>
+
+        <div class="contacto__info">
+          <div class="contacto__info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <div>
+              <span class="contacto__info-label">Ubicación</span>
+              <span class="contacto__info-value">Ixtlahuaca, Estado de México</span>
+            </div>
+          </div>
+          <div class="contacto__info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.13 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            <div>
+              <span class="contacto__info-label">Teléfono</span>
+              <span class="contacto__info-value">+52 722 000 0000</span>
+            </div>
+          </div>
+          <div class="contacto__info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <div>
+              <span class="contacto__info-label">Correo</span>
+              <span class="contacto__info-value">contacto@erosingenieria.com</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="/img/logo-nav.svg" alt="EROS Ingeniería" class="footer__logo" />
+        <p class="footer__tagline">Soluciones topográficas y constructivas en Estado de México.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 EROS Ingeniería. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
