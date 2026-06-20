@@ -18,20 +18,44 @@
 
   <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="navbar__logo">
+    <a href="#inicio" class="navbar__logo">
       <img src="/img/logo-nav.svg" alt="EROS Ingeniería" class="navbar__logo-img" id="navLogo" />
-    </div>
+    </a>
     <ul class="navbar__links">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
     </ul>
-    <a href="#contacto" class="navbar__cta">Contacto</a>
+    <a href="#contacto" class="navbar__cta">Cotiza</a>
+
+    <!-- Botón hamburguesa (solo visible en móvil) -->
+    <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+    </button>
   </nav>
+
+  <!-- MENÚ MÓVIL -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu__links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto" class="mobile-menu__cta">Cotiza</a></li>
+    </ul>
+  </div>
+
+  <!-- Fondo oscuro detrás del menú móvil -->
+  <div class="mobile-menu__backdrop" id="mobileMenuBackdrop"></div>
 
   <!-- HERO -->
   <section class="hero" id="inicio">
+
+    <!-- Imagen de fondo, desvanecida hacia la izquierda -->
+    <div class="hero__bg" aria-hidden="true"></div>
 
     <!-- Líneas decorativas de curvas topográficas -->
     <div class="hero__topo" aria-hidden="true">
@@ -46,7 +70,6 @@
 
     <div class="hero__inner">
 
-      <!-- Columna izquierda: texto -->
       <div class="hero__content">
 
         <div class="hero__tag">
@@ -87,15 +110,6 @@
 
       </div>
 
-      <!-- Columna derecha: logo -->
-      <div class="hero__visual">
-        <img
-          src="/img/logo-nobg.webp"
-          alt="EROS Ingeniería — Soluciones topográficas y constructivas"
-          class="hero__logo-img"
-        />
-      </div>  
-
     </div>
 
   </section>
@@ -108,7 +122,7 @@
       <div class="section__header">
         <span class="section__tag">Lo que hacemos</span>
         <h2 class="section__title">Nuestros servicios</h2>
-        <p class="section__subtitle">Soluciones precisas para cada etapa de tu proyecto, desde el levantamiento inicial hasta el trazo en campo.</p>
+        <p class="section__subtitle">Soluciones precisas para cada etapa de tu proyecto.</p>
       </div>
       <div class="servicios__grid">
 
@@ -119,7 +133,7 @@
             </svg>
           </div>
           <h3 class="servicio-card__title">Levantamiento topográfico</h3>
-          <p class="servicio-card__text">Medición y representación precisa del terreno para proyectos de ingeniería civil, catastro y urbanismo.</p>
+          <p class="servicio-card__text">Descripción</p>
         </div>
 
         <div class="servicio-card">
@@ -129,7 +143,7 @@
             </svg>
           </div>
           <h3 class="servicio-card__title">Levantamiento GNSS</h3>
-          <p class="servicio-card__text">Posicionamiento de alta precisión con GPS diferencial para control geodésico y replanteo de puntos críticos.</p>
+          <p class="servicio-card__text">Descripción</p>
         </div>
 
         <div class="servicio-card">
@@ -139,7 +153,7 @@
             </svg>
           </div>
           <h3 class="servicio-card__title">Fotogrametría con dron</h3>
-          <p class="servicio-card__text">Modelos 3D, ortofotomapas y nubes de puntos de alta resolución mediante vuelos UAV programados.</p>
+          <p class="servicio-card__text">Descripción</p>
         </div>
 
         <div class="servicio-card">
@@ -149,7 +163,7 @@
             </svg>
           </div>
           <h3 class="servicio-card__title">Trazo y nivelación</h3>
-          <p class="servicio-card__text">Replanteo de obras con estación total para garantizar alineaciones y cotas exactas en construcción.</p>
+          <p class="servicio-card__text">Descripción</p>
         </div>
 
         <div class="servicio-card">
@@ -158,8 +172,8 @@
               <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
             </svg>
           </div>
-          <h3 class="servicio-card__title">Planos y memorias</h3>
-          <p class="servicio-card__text">Elaboración de planos topográficos, perfiles de terreno y memorias de cálculo para trámites y construcción.</p>
+          <h3 class="servicio-card__title">Vías Terrestres</h3>
+          <p class="servicio-card__text">Descripción</p>
         </div>
 
         <div class="servicio-card">
@@ -168,8 +182,8 @@
               <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
             </svg>
           </div>
-          <h3 class="servicio-card__title">Consultoría técnica</h3>
-          <p class="servicio-card__text">Asesoramiento especializado en proyectos de ingeniería civil, análisis de terreno y viabilidad constructiva.</p>
+          <h3 class="servicio-card__title">Drenajes y líneas hidráulicas</h3>
+          <p class="servicio-card__text">Descripción</p>
         </div>
 
       </div>
@@ -185,14 +199,14 @@
       <div class="section__header">
         <span class="section__tag">Nuestra diferencia</span>
         <h2 class="section__title">¿Por qué elegir EROS?</h2>
-        <p class="section__subtitle">Combinamos tecnología de punta con conocimiento del terreno local para entregar resultados que otros no pueden.</p>
+        <p class="section__subtitle">Combinamos tecnología de punta con conocimiento del terreno local para entregar resultados precisos y de calidad industrial</p>
       </div>
       <div class="porque__grid">
 
         <div class="porque__item">
           <span class="porque__number">01</span>
           <h3 class="porque__title">Equipos de última generación</h3>
-          <p class="porque__text">Trabajamos con estaciones totales robotizadas, receptores GNSS RTK y drones DJI de grado profesional.</p>
+          <p class="porque__text">Trabajamos con estaciones totales robotizadas, drones DJI especializados y sistemas de georeferncia.</p>
         </div>
 
         <div class="porque__item">
@@ -204,12 +218,12 @@
         <div class="porque__item">
           <span class="porque__number">03</span>
           <h3 class="porque__title">Precisión certificada</h3>
-          <p class="porque__text">Todos nuestros trabajos incluyen memoria de cálculo y control de calidad interno antes de entrega.</p>
+          <p class="porque__text">Todos nuestros trabajos con precisión garantizada.</p>
         </div>
 
         <div class="porque__item">
           <span class="porque__number">04</span>
-          <h3 class="porque__title">Cobertura en Estado de México</h3>
+          <h3 class="porque__title">Amplia cobertura</h3>
           <p class="porque__text">Operamos en toda la región con conocimiento del terreno local, normativas municipales y condiciones de campo.</p>
         </div>
 
@@ -235,7 +249,7 @@
           <div class="proyecto-card__body">
             <span class="proyecto-card__tag">Levantamiento topográfico</span>
             <h3 class="proyecto-card__title">Fraccionamiento Ixtlahuaca</h3>
-            <p class="proyecto-card__text">Levantamiento de 12 hectáreas para proyecto de vivienda. Planos de lotificación y curvas de nivel.</p>
+            <p class="proyecto-card__text">Levantamiento de 12 hectáreas para proyecto de vivienda.</p>
           </div>
         </div>
 
@@ -243,8 +257,8 @@
           <div class="proyecto-card__img proyecto-card__img--2"></div>
           <div class="proyecto-card__body">
             <span class="proyecto-card__tag">Fotogrametría UAV</span>
-            <h3 class="proyecto-card__title">Ortofotomapa zona agrícola</h3>
-            <p class="proyecto-card__text">Vuelo fotogramétrico de 80 ha con generación de ortofoto y modelo digital de elevaciones.</p>
+            <h3 class="proyecto-card__title">Zona agrícola</h3>
+            <p class="proyecto-card__text">Vuelo fotogramétrico de 80 ha.</p>
           </div>
         </div>
 
@@ -253,7 +267,7 @@
           <div class="proyecto-card__body">
             <span class="proyecto-card__tag">Trazo y nivelación</span>
             <h3 class="proyecto-card__title">Trazo vialidad municipal</h3>
-            <p class="proyecto-card__text">Replanteo de trazo y nivelación para 2.4 km de vialidad primaria en Atlacomulco.</p>
+            <p class="proyecto-card__text">Trazo y nivelación para 2.5 km de vialidad primaria en Santa Cruz.</p>
           </div>
         </div>
 
@@ -270,23 +284,9 @@
 
       <div class="nosotros__content">
         <span class="section__tag">El equipo</span>
-        <h2 class="section__title">Ingenieros comprometidos con la precisión</h2>
-        <p class="nosotros__text">EROS Ingeniería nació con el objetivo de ofrecer soluciones topográficas de alta calidad en el Estado de México. Contamos con un equipo de ingenieros topógrafos certificados y apasionados por el trabajo de campo.</p>
+        <h2 class="section__title">100% comprometidos con la precisión</h2>
+        <p class="nosotros__text">EROS Ingeniería nació con el objetivo de ofrecer soluciones topográficas de alta calidad en el Estado de México. Contamos con el mejor equipo y el mejor personal para tu confianza y seguridad.</p>
         <p class="nosotros__text">Desde proyectos de vivienda hasta obra de infraestructura, aplicamos la misma rigurosidad técnica y compromiso con cada cliente, sin importar el tamaño del proyecto.</p>
-        <div class="nosotros__stats">
-          <div class="nosotros__stat">
-            <span class="nosotros__stat-number">+50</span>
-            <span class="nosotros__stat-label">Proyectos</span>
-          </div>
-          <div class="nosotros__stat">
-            <span class="nosotros__stat-number">4</span>
-            <span class="nosotros__stat-label">Años</span>
-          </div>
-          <div class="nosotros__stat">
-            <span class="nosotros__stat-number">100%</span>
-            <span class="nosotros__stat-label">Compromiso</span>
-          </div>
-        </div>
       </div>
 
       <div class="nosotros__visual">
@@ -309,7 +309,7 @@
     <div class="section__inner">
       <div class="section__header">
         <span class="section__tag">Clientes</span>
-        <h2 class="section__title">Lo que dicen de nosotros</h2>
+        <h2 class="section__title">Testimonios que brindan confianza</h2>
       </div>
       <div class="testimonios__grid">
 
@@ -336,7 +336,7 @@
         </div>
 
         <div class="testimonio-card">
-          <p class="testimonio-card__text">"El ortofotomapa que nos entregaron fue clave para la planeación del proyecto. Calidad de imagen excelente y proceso muy ágil."</p>
+          <p class="testimonio-card__text">"La fotogrametría que nos entregaron fue clave para la planeación del proyecto. Calidad de imagen excelente y proceso muy ágil."</p>
           <div class="testimonio-card__author">
             <div class="testimonio-card__avatar">CA</div>
             <div>
@@ -378,15 +378,23 @@
           </div>
           <div class="form-group">
             <label class="form-label" for="servicio">Servicio de interés</label>
-            <select class="form-input form-select" id="servicio">
-              <option value="">Selecciona un servicio</option>
-              <option>Levantamiento topográfico</option>
-              <option>Levantamiento GNSS</option>
-              <option>Fotogrametría con dron</option>
-              <option>Trazo y nivelación</option>
-              <option>Planos y memorias</option>
-              <option>Consultoría técnica</option>
-            </select>
+            <div class="custom-select" id="servicioSelect">
+              <button type="button" class="custom-select__trigger" id="servicioTrigger" aria-haspopup="listbox" aria-expanded="false">
+                <span id="servicioValue">Selecciona un servicio</span>
+                <svg class="custom-select__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </button>
+              <ul class="custom-select__options" id="servicioOptions" role="listbox">
+                <li role="option" data-value="Levantamiento topográfico">Levantamiento topográfico</li>
+                <li role="option" data-value="Levantamiento GNSS">Levantamiento GNSS</li>
+                <li role="option" data-value="Fotogrametría con dron">Fotogrametría con dron</li>
+                <li role="option" data-value="Trazo y nivelación">Trazo y nivelación</li>
+                <li role="option" data-value="Vías terrestres">Vías terrestres</li>
+                <li role="option" data-value="Drenajes y Líneas Hidráulicas">Drenajes y Líneas Hidráulicas</li>
+              </ul>
+            </div>
+            <input type="hidden" id="servicio" name="servicio" value="" />
           </div>
           <div class="form-group">
             <label class="form-label" for="mensaje">Descripción del proyecto</label>
@@ -447,10 +455,11 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <span>© 2025 EROS Ingeniería. Todos los derechos reservados.</span>
+      <span>© 2026 EROS Ingeniería. Todos los derechos reservados.</span>
     </div>
   </footer>
 
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="script.js"></script>
 
 </body>
