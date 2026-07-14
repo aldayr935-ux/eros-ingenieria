@@ -201,6 +201,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ============================================================
+// SERVICIOS — Toggle "Mostrar más / Mostrar menos"
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.servicio-card__toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.servicio-card');
+      const isOpen = card.classList.toggle('is-open');
+      btn.textContent = isOpen ? 'Mostrar menos' : 'Mostrar más';
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  });
+});
+
+
+// ============================================================
 // SCROLL REVEAL — aparición de secciones al hacer scroll
 // ============================================================
 
@@ -215,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '.section__header, ' +
     '.servicios__grid, ' +
     '.porque__grid, ' +
-    '.proyectos__grid, ' +
+    '.carrusel, ' +
     '.testimonios__grid, ' +
     '.nosotros__content, .nosotros__visual, ' +
     '.contacto__form-wrap, .contacto__info'
@@ -224,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Marca como grupo a las grids con varias tarjetas: las tarjetas internas
   // se animan en cascada por CSS cuando el grid recibe 'is-visible'
   document.querySelectorAll(
-    '.servicios__grid, .porque__grid, .proyectos__grid, .testimonios__grid'
+    '.servicios__grid, .porque__grid, .testimonios__grid'
   ).forEach(grid => {
     grid.classList.add('reveal-group');
     Array.from(grid.children).forEach(card => card.classList.add('reveal'));
@@ -232,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // El resto de targets (que no son grids) se animan ellos mismos
   document.querySelectorAll(
-    '.section__header, .nosotros__content, .nosotros__visual, .contacto__form-wrap, .contacto__info'
+    '.section__header, .carrusel, .nosotros__content, .nosotros__visual, .contacto__form-wrap, .contacto__info'
   ).forEach(el => el.classList.add('reveal'));
 
   const observer = new IntersectionObserver((entries) => {
@@ -255,4 +271,122 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   targets.forEach(el => observer.observe(el));
+});
+
+// ============================================================
+// CARRUSEL — Proyectos
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  const track     = document.getElementById('carruselTrack');
+  const btnPrev   = document.getElementById('carruselPrev');
+  const btnNext   = document.getElementById('carruselNext');
+  const dotsWrap  = document.getElementById('carruselDots');
+
+  if (!track || !btnPrev || !btnNext || !dotsWrap) return;
+
+  const cards         = Array.from(track.children);
+  const totalCards    = cards.length;
+  const AUTOPLAY_MS   = 4500;   // tiempo entre avances automáticos
+  let currentPage     = 0;
+  let autoplayTimer   = null;
+
+  // Detecta cuántas tarjetas caben según el ancho actual
+  function cardsPerView() {
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const trackWidth = track.parentElement.getBoundingClientRect().width;
+    return Math.round(trackWidth / (cardWidth + 24)) || 1;
+  }
+
+  function totalPages() {
+    return Math.ceil(totalCards / cardsPerView());
+  }
+
+  // Genera los dots según el número de páginas
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < totalPages(); i++) {
+      const dot = document.createElement('button');
+      dot.classList.add('carrusel__dot');
+      dot.setAttribute('aria-label', `Ir a página ${i + 1}`);
+      if (i === currentPage) dot.classList.add('is-active');
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    dotsWrap.querySelectorAll('.carrusel__dot').forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === currentPage);
+    });
+  }
+
+  function updateButtons() {
+    btnPrev.disabled = currentPage === 0;
+    btnNext.disabled = currentPage === totalPages() - 1;
+  }
+
+  function goTo(page) {
+    const pages = totalPages();
+    // Loop circular
+    currentPage = (page + pages) % pages;
+
+    const perView   = cardsPerView();
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap       = 24;
+    const offset    = currentPage * perView * (cardWidth + gap);
+
+    track.style.transform = `translateX(-${offset}px)`;
+    updateDots();
+    updateButtons();
+  }
+
+  function next() { goTo(currentPage + 1 >= totalPages() ? 0 : currentPage + 1); }
+  function prev() { goTo(currentPage - 1); }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(next, AUTOPLAY_MS);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) clearInterval(autoplayTimer);
+  }
+
+  // Botones
+  btnNext.addEventListener('click', () => { next(); startAutoplay(); });
+  btnPrev.addEventListener('click', () => { prev(); startAutoplay(); });
+
+  // Pausa el autoplay al hover
+  track.parentElement.addEventListener('mouseenter', stopAutoplay);
+  track.parentElement.addEventListener('mouseleave', startAutoplay);
+
+  // Soporte táctil (swipe)
+  let touchStartX = 0;
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    stopAutoplay();
+  }, { passive: true });
+
+  track.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
+    startAutoplay();
+  }, { passive: true });
+
+  // Recalcula al cambiar el tamaño de ventana
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      buildDots();
+      goTo(0);
+      startAutoplay();
+    }, 200);
+  });
+
+  // Init
+  buildDots();
+  goTo(0);
+  startAutoplay();
 });
